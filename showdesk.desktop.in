@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Show Desktop
+Comment=Show your desktop Wallpaper
+Exec=showdesk
+Terminal=false
+Type=Application
+Icon=assets/logo.svg
+X-Ubuntu-Touch=true
