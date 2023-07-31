@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-         build: [Release, Debug]
+         build: [Release]
          arch: [armhf, arm64, amd64]
          version: ['refs/tags/5.2.1-youtube']
 
@@ -57,6 +57,7 @@ jobs:
         run: ~/.local/bin/clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
       - uses: actions/upload-artifact@v2
         with:
+        if: always()
           name: "ubports-${{ matrix.arch }}--click"
           path: "build/*/app/*.click"
           if-no-files-found: ignore
