@@ -51,10 +51,10 @@ jobs:
           sudo systemctl unmask docker.service
           sudo systemctl start docker.service
       - name: Build
-        env:
+        env: 
           BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
           ARCH: ${{ matrix.arch }}
-        run: ~/.local/bin/clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
+        run: CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04 ~/.local/bin/clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
       - uses: actions/upload-artifact@v2
         with:
           if: always()
