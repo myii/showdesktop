@@ -14,58 +14,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.7
-import Ubuntu.Components 1.3
-//import QtQuick.Controls 2.2
+import QtQuick 2.9
+import Lomiri.Components 1.3
 import QtQuick.Layouts 1.3
-import Qt.labs.settings 1.0
-import QtGraphicalEffects 1.0
 
-import GSettings 1.0
 import AccountsService 0.1
 
-MainView {
-    id: root
-    objectName: 'mainView'
-    applicationName: 'showdesk.mateo-salta'
-    automaticOrientation: true
-
-    width: units.gu(45)
-    height: units.gu(75)
-
-    Page {
-    
-       GSettings {
-        id: systemSettings
-        schema.id: 'com.ubuntu.touch.system-settings'
-    }
-
-        anchors.fill: parent
-            Rectangle {
-        anchors.fill: parent
-        color: systemSettings.dashBackground ? 'black' : 'white'
-
-        Image {
-
+        Rectangle {
             anchors.fill: parent
 
-            visible: systemSettings.dashBackground
+        Image {
+            anchors.fill: parent
+            visible: true
             source: AccountsService.backgroundFile
             fillMode: Image.PreserveAspectCrop
-            //opacity: systemSettings.backgroundOpacity
         }
   
     }
-    
 
-
-////
-       header: PageHeader {
-            id: header
-            title: i18n.tr('Show Desktop')
-            visible: false
-        } 
-
-     
-    }
-}
