@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     app->setApplicationName("showdesk.mateo-salta");
     QQmlEngine *engine = new QQmlEngine(app);
 
-    engine->addImportPath(QStringLiteral("/usr/lib/" __ARCH_TRIPLET__ "/lomiri/qml/" ));
+    engine->addImportPath(QStringLiteral("/usr/lib/"__ARCH_TRIPLET__"/lomiri/qml/" ));
 
     QQuickView *view = new QQuickView(engine, nullptr);
 
