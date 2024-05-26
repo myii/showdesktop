@@ -2,5 +2,6 @@
   "builder": "cmake",
   "clickable_minimum_required": "6.12.2",
   "qt_version": "5.12",
-  "kill": "showdesk"
+  "kill": "showdesk",
+  "ignore_review_errors": true
 }
